@@ -28,18 +28,18 @@ void FillArrayRandomNumbers(int[,] array)
 
 void Sortirovka(int[,] numbers)
 {
-    for (int i = 0; i < numbers.GetLength(0); i++)
+for (int i = 0; i < numbers.GetLength(0); i++)
+{
+    for (int j = 0; j < numbers.GetLength(1) - 1; j++)
     {
-    for (int j = 0; j < numbers.GetLength(1); j++)
-    {
-        for (int a = 0; a < numbers.GetLength(1) - 1; a++)
+        for (int z = 0; z < numbers.GetLength(1) - 1; z++)
         {
-            if (numbers[i, a] < numbers[i, a + 1])
+            if (numbers[i, z] < numbers[i, z + 1])
             {
                 int temp = 0;
-                temp = numbers[i, a];
-                numbers[i, a] = numbers[i, a + 1];
-                numbers[i, a + 1] = temp;
+                temp = numbers[i, z];
+                numbers[i, z] = numbers[i, z + 1];
+                numbers[i, z + 1] = temp;
             }
         }
     }
@@ -57,6 +57,7 @@ void PrintArray(int[,] array)
         Console.WriteLine("");
     }
 }
+
 FillArrayRandomNumbers(numbers);
 Console.WriteLine("Исходный массив:");
 PrintArray(numbers);
